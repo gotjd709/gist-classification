@@ -210,8 +210,6 @@ class InferenceWSI(object):
         ret0 = cv2.resize(ret0, (slide_image.shape[1], slide_image.shape[0]), interpolation=cv2.INTER_NEAREST)
 
         map_img_msk  = self.image_with_mask(slide_image.copy(), ret0)
-
-        map_img_msk  = self.draw_grid(map_img_msk, wsi_set.thumbnail_mask.shape)
         map_img_msk  = cv2.cvtColor(map_img_msk, cv2.COLOR_RGB2BGR)
 
         organ_name_list = [self.slide_organ]*len(loc_x_list)
